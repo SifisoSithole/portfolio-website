@@ -21,10 +21,10 @@
       <section id="about">
         <h2>About Me</h2>
         <p>
-          Welcome to my portfolio! I am passionate about creating innovative
-          solutions using technology. With a strong background in web
-          development, I am constantly learning and exploring new technologies
-          to expand my skills.
+          Welcome to my portfolio! My name is Sifiso I am passionate about
+          creating innovative solutions using technology. With a strong
+          background in web development, I am constantly learning and exploring
+          new technologies to expand my skills.
         </p>
         <a href="./sifiso_sithole.pdf" download target="_blank">
           <button>Download CV</button>
@@ -403,7 +403,7 @@
       <section id="contact">
         <h2>Contact Me</h2>
         <div class="contact-form">
-          <form>
+          <form method="post" action="#">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required />
 
@@ -413,11 +413,33 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
 
-            <button type="submit">Send Message</button>
+            <button type="button" id="submit-button">Send Message</button>
           </form>
         </div>
       </section>
+
+      <section class="social-links">
+        <a
+          href="https://www.linkedin.com/in/sifiso-sithole-723398132/"
+          target="_blank"
+        >
+          <img src="./linkedin.png" alt="LinkedIn Logo" />
+        </a>
+        <a href="https://github.com/SifisoSithole" target="_blank">
+          <img src="./github.png" alt="GitHub Logo" />
+        </a>
+      </section>
     </div>
+
+    <script>
+      const submitButton = document.getElementById("submit-button");
+      submitButton.addEventListener("click", () => {
+        const name = (document.getElementById("name").value = "");
+        const email = (document.getElementById("email").value = "");
+        const message = (document.getElementById("message").value = "");
+        alert("Message sent successfully!");
+      });
+    </script>
 
     <footer>&copy; 2024 My Portfolio</footer>
   </body>
