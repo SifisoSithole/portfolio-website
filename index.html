@@ -413,7 +413,7 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
 
-            <button type="button" id="submit-button">Send Message</button>
+            <button type="submit" id="submit-button">Send Message</button>
           </form>
         </div>
       </section>
@@ -432,12 +432,16 @@
     </div>
 
     <script>
-      const submitButton = document.getElementById("submit-button");
-      submitButton.addEventListener("click", () => {
-        const name = (document.getElementById("name").value = "");
-        const email = (document.getElementById("email").value = "");
-        const message = (document.getElementById("message").value = "");
-        alert("Message sent successfully!");
+      const form = document.querySelector(".contact-form form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (form.checkValidity()) {
+          alert("Form has been submitted!");
+
+          form.submit();
+        }
       });
     </script>
 
