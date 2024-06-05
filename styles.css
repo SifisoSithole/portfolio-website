@@ -91,7 +91,9 @@ a svg {
   grid-template-columns: repeat(2, 1fr);
 }
 
-button {
+button,
+.button {
+  display: inline-block;
   background-color: rgba(15, 23, 42, 1);
   color: #57cbff;
   padding: 0.625rem 1.25rem;
@@ -107,13 +109,6 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.625rem;
-}
-
-#projects,
-#about,
-#contact,
-.left-side {
-  width: 90%;
 }
 
 .project {
@@ -211,7 +206,8 @@ a {
     overflow-y: scroll;
   }
 
-  button:hover {
+  button:hover,
+  .button:hover {
     background-color: #57cbff;
     color: #000;
   }
