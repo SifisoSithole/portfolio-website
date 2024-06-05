@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   function updateImageSource() {
     for (let img of projectImages) {
-      if (window.innerWidth >= 800) {
+      if (window.innerWidth >= 600) {
         if (!img.src.includes("_desktop"))
           img.src = img.src.replace(".PNG", "_desktop.PNG");
       } else {
