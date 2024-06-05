@@ -1,6 +1,18 @@
 window.addEventListener("DOMContentLoaded", (event) => {
   const projectImages = document.querySelectorAll("img");
 
+  const form = document.querySelector(".contact-form form");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (form.checkValidity()) {
+      alert("Form has been submitted!");
+
+      form.submit();
+    }
+  });
+
   function updateImageSource() {
     for (let img of projectImages) {
       if (window.innerWidth >= 600) {

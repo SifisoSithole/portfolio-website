@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  width: 40vw;
+  width: 100%;
   height: 100%;
   background-color: rgba(15, 23, 42, 1);
   font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", system-ui,
@@ -10,54 +10,57 @@ body {
   color: #fff;
 }
 
-main,
-.right-side {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+main {
+  width: 100vw;
 }
 
-main {
-  width: 40%;
+main,
+.right-side {
+  display: grid;
+  place-items: center;
 }
 
 p,
 h2,
 h3 {
   margin: 0;
-  padding-bottom: 1.5px;
+  padding-bottom: 0.1rem;
 }
 
 .left-side {
-  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 3.75rem;
 }
 
 .left-side p:first-child {
   font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
   color: #57cbff;
-  font-size: 5vw;
+  font-size: 1.5rem;
 }
 
 .left-side > :nth-child(2) {
   font-weight: 800;
-  font-size: 8vw;
+  font-size: 2rem;
 }
 
 .left-side > :nth-child(3) {
   font-weight: 800;
   color: #8892b0;
-  font-size: 7vw;
+  font-size: 1.75rem;
 }
 
 .links {
-  padding-top: 15px;
+  padding-top: 0.9375rem;
   display: flex;
-  gap: 15px;
+  grid-gap: 0.9375rem;
 }
 
 .svg-container {
-  width: 10vw;
-  height: 10vw;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 a svg {
@@ -66,15 +69,15 @@ a svg {
 
 .section p {
   color: rgba(148, 163, 184, 1);
-  font-size: 4vw;
+  font-size: 1rem;
 }
 
 .section h2 {
-  font-size: 6vw;
+  font-size: 1.5rem;
 }
 
 .section {
-  padding-top: 50px;
+  padding-top: 3.125rem;
   width: 85%;
 }
 
@@ -83,57 +86,64 @@ a svg {
 }
 
 .technologies {
-  padding-top: 5px;
-  display: flex;
-  justify-content: space-between;
+  padding-top: 0.3125rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 button {
   background-color: rgba(15, 23, 42, 1);
   color: #57cbff;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   border: #57cbff 1px solid;
   border-radius: 4px;
   text-decoration: none;
   cursor: pointer;
-  margin-top: 10px;
-  font-size: 5vw;
+  margin-top: 0.625rem;
+  font-size: 1.25rem;
 }
 
 #projects {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 80%;
-  gap: 10px;
+  gap: 0.625rem;
+}
+
+#projects,
+#about,
+#contact,
+.left-side {
+  width: 90%;
 }
 
 .project {
   background-color: rgba(35, 43, 62, 1);
-  padding: 5vw;
-  margin-top: 10px;
-  display: flex;
-  gap: 5vw;
+  padding: 1.25rem;
+  margin-top: 0.625rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.25rem;
   border-radius: 20px;
 }
 
 .tools {
   display: flex;
-  gap: 2vw;
+  justify-content: space-around;
+  grid-gap: 0.5rem;
 }
 
 .tools p {
   background-color: #57cbff;
-  padding: 1.5vw;
-  font-size: 2vw;
+  padding: 0.375rem;
+  font-size: 0.5rem;
+  height: 15px;
   color: black;
   border-radius: 50px;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-gap: 0.625rem;
   justify-content: space-around;
 }
 
@@ -145,35 +155,84 @@ a {
 .contact-form {
   background-color: rgba(35, 43, 62, 1);
   border-radius: 20px;
-  padding: 20px;
-  width: 80%;
-  margin-top: 5vw;
-  font-size: 5vw;
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  font-size: 1.25rem;
 }
 
 #contact {
-  margin-bottom: 10vw;
+  margin-bottom: 2.5rem;
 }
 
 .contact-form label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .contact-form input[type="text"],
 .contact-form textarea,
 .contact-form input[type="email"] {
-  font-size: 5vw;
+  font-size: 1.25rem;
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
+  padding: 0.625rem;
+  margin-bottom: 0.9375rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
 .contact-form button {
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   border: none;
   cursor: pointer;
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+  }
+
+  .left-side {
+    height: 100vh;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .right-side {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+  }
+
+  button:hover {
+    background-color: #57cbff;
+    color: #000;
+  }
+
+  .project:hover {
+    background-color: #57cbff;
+    color: rgba(15, 23, 42, 1);
+    .tools p {
+      background-color: rgba(15, 23, 42, 1);
+      color: #57cbff;
+    }
+  }
+
+  .project img {
+    width: 70%;
+  }
+
+  .tools {
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
